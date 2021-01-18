@@ -6,6 +6,7 @@ import (
 	"github.com/astaxie/beego/orm"
 )
 
+// Users 用户表
 type Users struct {
 	Id            int64           `pk:"auto;column(id)"`
 	Name          string          `orm:"size(32);column(name);comment('昵称')"`
@@ -15,8 +16,10 @@ type Users struct {
 	CreateTime    time.Time       `orm:"auto_now_add;type(datetime);column(create_time);comment('创建时间')"`
 	UpdateTime    time.Time       `orm:"auto_now;type(datetime);column(update_time);comment('更新时间')"`
 	UserLoginInfo *UsersLoginInfo `orm:"rel(one)"`
+	Collect       *Collect        `orm:"rel(one)`
 }
 
+// UsersLoginInfo 用户注册信息表
 type UsersLoginInfo struct {
 	Id        int64  `pk:"auto;column(id)"`
 	UserID    int64  `orm:"column(user_id);comment('用户id')"`
@@ -25,8 +28,13 @@ type UsersLoginInfo struct {
 	User      *Users `orm:"reverse(one)"`
 }
 
+// Collect 用户收藏表， 文章与用户是多对多的关系
 type Collect struct {
-	Id int64 `pk:"auto;column(id)"`
+	Id         int64     `pk:"auto;column(id)"`
+	UserID     int64     `orm:"column(user_id);comment('用户id')`
+	CreateTime time.Time `orm:"auto_now_add;type(datetime);column(create_time);comment('创建时间')"`
+	UpdateTime time.Time `orm:"auto_now;type(datetime);column(update_time);comment('更新时间')"`
+	User       *Users    `orm:"reverse(one)"`
 }
 
 func init() {
