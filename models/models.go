@@ -1,8 +1,9 @@
 package models
 
 import (
-	"github.com/astaxie/beego/orm"
 	"time"
+
+	"github.com/astaxie/beego/orm"
 )
 
 type Users struct {
@@ -22,6 +23,10 @@ type UsersLoginInfo struct {
 	LoginName string `orm:"size(16);column(login_name);comment('用户登录账户')"`
 	Pwd       string `orm:"size(32);column(password);comment('用户登录密码')"`
 	User      *Users `orm:"reverse(one)"`
+}
+
+type Collect struct {
+	Id int64 `pk:"auto;column(id)"`
 }
 
 func init() {
