@@ -3,6 +3,7 @@ package main
 import (
 	_ "GoJcShare/models"
 	_ "GoJcShare/routers"
+
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 	_ "github.com/go-sql-driver/mysql"
