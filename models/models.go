@@ -105,10 +105,12 @@ type Article struct {
 
 // ArticlePhotoPath 文章图片路径
 type ArticlePhotoPath struct {
-	Id         int64     `pk:"auto"`
-	PhotoPaths string    `orm:"size(256)"`
-	CreateTime time.Time `orm:"type(datetime);auto_now_add"`
-	UpdateTime time.Time `orm:"type(datetime);auto_now"`
+	Id          int64           `pk:"auto"`
+	PhotoPaths  string          `orm:"size(256)"`
+	IsMainPhoto int64           `orm:"size(10);description(是否主图1是,0不是)"`
+	ArticalMsg  *ArticleMessage `orm:"rel(fk);description(文章id)"`
+	CreateTime  time.Time       `orm:"type(datetime);auto_now_add"`
+	UpdateTime  time.Time       `orm:"type(datetime);auto_now"`
 }
 
 // UserLikes 用户收藏(like),浏览表
