@@ -152,8 +152,8 @@ type ArticleMessage struct {
 type Comment struct {
 	Id          int64  `pk:"auto;column(Id)"`
 	ComContent  string `orm:"size(512);description(评论正文)"`
-	CommentType int32  `orm:"size(10);default(1);description(1评论文章; 2回复评论)"`
-	CommentId   int64  `orm:"size(32);default(10);description(type为1写文章Id; 2为comment Id)"`
+	CommentType int32  `orm:"size(10);default(1);description(1评论文章, 2回复评论)"`
+	CommentId   int64  `orm:"size(32);default(10);description(type为1写文章Id, 2为comment_Id)"`
 }
 
 // VirtualJcb JC币表，记录创建时间、金额、数量、状态、兑换数量
@@ -173,7 +173,7 @@ type VipLevel struct {
 	Id        int64  `pk:"auto;column('Id')"`
 	LevelName string `orm:"size(10);description(vip等级名称, 会员, VIP1--周, VIP2--月, VIP3--季, VIP4--年)"`
 	JcbNum    int64  `orm:"size(10);default(0);description(每个等级需要的金币数量)"`
-	ValidDay  int64  `orm:"size(10)ldefault(10);description(不同VIP等级有效时间)"`
+	ValidDay  int64  `orm:"size(10);default(10);description(不同VIP等级有效时间)"`
 }
 
 // VirtualJcbExchangeLog JcB兑换记录

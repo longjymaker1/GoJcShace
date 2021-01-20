@@ -16,47 +16,110 @@
     <meta name="description" content="JcShare " />
     <title>JcShare</title>
     <!-- Style Sheet-->
+    <link rel="stylesheet" media="all" href="/static/css/style.css">
     <script type='text/javascript' src='/static/js/jquery.js?ver=1.12.4'></script>
     <script type='text/javascript' src='/static/js/jquery-migrate.min.js?ver=1.4.1'></script>
     <script type='text/javascript' src='/static/js/owl.carousel.js?ver=1.0.0'></script>
     <script type='text/javascript' src='/static/js/jquery.fancybox.js?ver=1.0.0'></script>
-
+    <style type="text/css">.fancybox-margin{margin-right:17px;}</style>
 </head>
 <body class="home" cz-shortcut-listen="true" style>
     <header id="header">
-        <div class="top-header">
+        <!-- <div class="top-header">
           <div class="container">
             <div class="pull-left">自定义链接或者文字</div>
             <div class="pull-right hidden-xs"> <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>自定义链接</a> <a href="#"><i class="fa fa-sitemap" aria-hidden="true"></i>自定义链接</a></div>
           </div>
-        </div>
+        </div> -->
         <div class="btm-header mt20 mb20">
-          <div class="container">
-            <div class="header-logo">
-              <h1>我的网站</h1>
-              <a title="我的网站" class="logo-url pull-right" href="/"> <img src="/skin/ecms163/images/logo.png" alt="我的网站"  title="我的网站"/> </a>
-              <div class="slogen hidden-xs">
-                <h2>LOGO右边文字</h2>
-                <p>LOGO右边文字LOGO右边文字</p>
-              </div>
+            <div class="container">
+                <div class="header-logo">
+                <a title="JcShare" class="logo-url pull-right" href="/">
+                    <img src="/static/imgs/logo0.png" alt="JcShare"  title="JcShare"/>
+                </a>
+                    <div class="slogen hidden-xs">
+                        <h2>JcShare</h2><p>分享</p>
+                    </div>
+                </div>
+                <div class="button visible-xs-block">
+                    <div class="menu-toggle"> <span></span></div>
+                </div>
             </div>
-            <div class="header-phone hidden-xs">
-              <p><i class="fa fa-mobile-phone" aria-hidden="true"></i>0531-88888888<br>
-                <i class="fa fa-phone" aria-hidden="true"></i>13888888888</p>
-            </div>
-            <div class="button visible-xs-block">
-              <div class="menu-toggle"> <span></span></div>
-            </div>
-          </div>
         </div>
         <div class="header-menu">
-          <ul id="menu" class="header-menu-con  container">
-            <li class="current-menu-item"><a href="/">首页</a></li>
-            <li class="menu-item "><a href="/products/">产品中心</a><ul class="sub-menu"><li class="menu-item"><a href="/products/test/">测试二级</a></li><li class="menu-item"><a href="/products/phone/">智能手机</a></li><li class="menu-item"><a href="/products/notebook/">笔记本</a></li><li class="menu-item"><a href="/products/test2/">测试栏目</a></li><li class="menu-item"><a href="/products/test3/">测试二级</a></li><li class="menu-item"><a href="/products/test4/">测试栏目</a></li><li class="menu-item"><a href="/products/test5/">测试栏目</a></li></ul></li><li class="menu-item "><a href="/news/">新闻动态</a><ul class="sub-menu"><li class="menu-item"><a href="/news/gongsi/">公司动态</a></li><li class="menu-item"><a href="/news/hangye/">行业动态</a></li></ul></li><li class="menu-item "><a href="/shocases/">案例展示</a><ul class="sub-menu"><li class="menu-item"><a href="/shocases/vis/">品牌设计</a></li><li class="menu-item"><a href="/shocases/sis/">商业空间</a></li><li class="menu-item"><a href="/shocases/ais/">画册设计</a></li><li class="menu-item"><a href="/shocases/add/">广告设计</a></li></ul></li><li class="menu-item "><a href="/contact/">联系我们</a><ul class="sub-menu"></ul></li><li class="menu-item "><a href="/about/">关于我们</a><ul class="sub-menu"></ul></li><li class="menu-item "><a href="/service/">我们的服务</a><ul class="sub-menu"></ul></li>    </ul>
+            <ul id="menu" class="header-menu-con  container">
+                <li class="current-menu-item"><a href="/">首页</a></li>
+                <li class="menu-item ">
+                    <a href="/products/">产品中心</a>
+                    <ul class="sub-menu">
+                        <li class="menu-item">
+                            <a href="/products/test/">测试二级</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/products/phone/">智能手机</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/products/notebook/">笔记本</a>
+                        </li>
+                        <li class="menu-item">
+                        <a href="/products/test2/">测试栏目</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/products/test3/">测试二级</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/products/test4/">测试栏目</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/products/test5/">测试栏目</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-item ">
+                    <a href="/news/">新闻动态</a>
+                    <ul class="sub-menu">
+                        <li class="menu-item">
+                            <a href="/news/gongsi/">公司动态</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/news/hangye/">行业动态</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-item ">
+                    <a href="/shocases/">案例展示</a>
+                    <ul class="sub-menu">
+                        <li class="menu-item">
+                            <a href="/shocases/vis/">品牌设计</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/shocases/sis/">商业空间</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/shocases/ais/">画册设计</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="/shocases/add/">广告设计</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu-item ">
+                    <a href="/contact/">联系我们</a>
+                    <ul class="sub-menu"></ul>
+                </li>
+            </ul>
+            <li class="menu-item ">
+                <a href="/about/">关于我们</a>
+                <ul class="sub-menu"></ul>
+            </li>
+            <li class="menu-item ">
+                <a href="/service/">我们的服务</a><ul class="sub-menu"></ul>
+            </li>
         </div>
     </header>
 
 
-
+    <script type="text/javascript" src="/static/js/xs.js?ver=1.0.0"></script>
+    <script type="text/javascript" src="/static/js/wp-embed.min.js?ver=4.9.6"></script>
 </body>
 </html>
