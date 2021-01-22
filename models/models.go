@@ -45,27 +45,40 @@ type Attention struct {
 // Country 国家表--我们的目标是P遍全球
 type Country struct {
 	Id         int64     `pk:"auto"`
+	Code       string    `orm:"size(32)"`
 	Country    string    `orm:"size(32)"`
 	CreateTime time.Time `orm:"type(datetime);auto_now_add"`
 	UpdateTime time.Time `orm:"type(datetime);auto_now"`
 }
 
-// Province 省份表 -- 省、直辖市
-type Province struct {
+// Region 地区，东北、华北、华中...
+type Region struct {
 	Id         int64     `pk:"auto"`
+	Code       string    `orm:"size(32)"`
 	Province   string    `orm:"size(32)"`
 	CreateTime time.Time `orm:"type(datetime);auto_now_add"`
 	UpdateTime time.Time `orm:"type(datetime);auto_now"`
-	CountryId  *Country  `orm:"rel(one)"`
+	CountryId  *Country  `orm:"rel(fk)"`
+}
+
+// Province 省份表 -- 省、直辖市
+type Province struct {
+	Id         int64     `pk:"auto"`
+	Code       string    `orm:"size(32)"`
+	Province   string    `orm:"size(32)"`
+	CreateTime time.Time `orm:"type(datetime);auto_now_add"`
+	UpdateTime time.Time `orm:"type(datetime);auto_now"`
+	RegionId   *Region   `orm:"rel(fk)"`
 }
 
 // City 城市表 -- 市, 直辖市区
 type City struct {
 	Id         int64     `pk:"auto"`
+	Code       string    `orm:"size(32)"`
 	City       string    `orm:"size(32)"`
 	CreateTime time.Time `orm:"type(datetime);auto_now_add"`
 	UpdateTime time.Time `orm:"type(datetime);auto_now"`
-	ProvinceId *Province `orm:"rel(one)"`
+	ProvinceId *Province `orm:"rel(fk)"`
 }
 
 // District 城市区域表 -- 区
@@ -74,7 +87,7 @@ type District struct {
 	District   string    `orm:"size(32)"`
 	CreateTime time.Time `orm:"type(datetime);auto_now_add"`
 	UpdateTime time.Time `orm:"type(datetime);auto_now"`
-	CityId     *City     `orm:"rel(one)"`
+	CityId     *City     `orm:"rel(fk)"`
 }
 
 // ArticleType 文章类型
@@ -192,6 +205,6 @@ func init() {
 	orm.RegisterModel(new(Users), new(UsersLoginInfo), new(Attention), new(Country),
 		new(Province), new(City), new(District), new(ArticleType), new(Article),
 		new(ArticlePhotoPath), new(UserLikes), new(ArticleMessage), new(Comment),
-		new(VirtualJcb), new(VirtualJcbExchangeLog), new(VipLevel),
+		new(VirtualJcb), new(VirtualJcbExchangeLog), new(VipLevel), new(Region),
 	)
 }
